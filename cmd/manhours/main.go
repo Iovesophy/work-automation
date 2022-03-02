@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"strings"
 
 	"work-automation/cmd/auth"
 	"work-automation/pkg/element"
@@ -38,14 +37,4 @@ func main() {
 
 	tmpl := c.Page.FindByName(element.Tmpl)
 	tmpl.Select(element.Mytmpl01)
-
-	title := c.Page.FindByID(element.EditorTitle)
-	timetitle, err := title.Text()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	alltime := timetitle[strings.Index(timetitle, "＝")+1:]
-	v := c.Page.FindByName(element.Input01)
-	v.SendKeys(alltime)
 }
