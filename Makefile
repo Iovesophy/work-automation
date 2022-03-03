@@ -26,6 +26,6 @@ attach:
 .PHONY: detach
 detach:
 	if [ "$(shell cat config/touch.log)" = "0" ] ; then \
-		cd cmd/detach; go run main.go && echo "do_detach"; echo 1 > config/touch.log \
+		cd cmd/detach; go run main.go && echo 1 > config/touch.log \
 	fi
 	cd cmd/manhours; go run main.go
