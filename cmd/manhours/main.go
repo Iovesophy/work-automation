@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"time"
 
 	"work-automation/cmd/auth"
 	"work-automation/pkg/element"
@@ -12,6 +13,7 @@ import (
 const (
 	AUTH_CONFIG  = "../../config/config.yml"
 	PublicKeyPem = "../../config/automationPublicKey.pem"
+	Mytmpl01     = "テスト"
 )
 
 func main() {
@@ -35,6 +37,8 @@ func main() {
 	edit := c.Page.FindByXPath(element.TodayXpath)
 	edit.Click()
 
+	time.Sleep(time.Second * 1)
+
 	tmpl := c.Page.FindByName(element.Tmpl)
-	tmpl.Select(element.Mytmpl01)
+	tmpl.Select(Mytmpl01)
 }
