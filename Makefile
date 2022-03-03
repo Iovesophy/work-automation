@@ -1,10 +1,3 @@
-.PHONY: startup
-startup: setup genkey
-	mkdir -p ~/.ssh/work
-	cd cmd/genkey; go run main.go
-	cd cmd/do-login; go run main.go
-	echo 1 > config/touch.log
-
 .PHONY: setup
 setup:
 	./setup.sh

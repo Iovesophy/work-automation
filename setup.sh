@@ -15,3 +15,5 @@ unzip chromedriver_mac*.zip
 cp chromedriver /usr/local/bin
 xattr -d com.apple.quarantine chromedriver
 rm -f chromedriver chromedriver_mac*.zip
+
+echo 1 > config/touch.log
