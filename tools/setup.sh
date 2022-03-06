@@ -19,5 +19,6 @@ printf "Please input your email:"
 read -r JOBEMAIL
 printf "email: %s\n" "${JOBEMAIL}" > config/config.yml
 printf "1" > config/touch.log
+mkdir -p ~/.ssh/work
 
 printf "Setup done\n"

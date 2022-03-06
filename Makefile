@@ -1,14 +1,15 @@
 .PHONY: setup
 setup: build
-	./setup.sh
+	./tools/setup.sh
+	./genkey
 
 .PHONY: build
 build: clean
-	./build.sh
+	./tools/build.sh
 
 .PHONY: clean
 clean:
-	rm -f genkey attach detach manhours
+	rm -rf genkey attach detach manhours config/* ~/.ssh/work
 
 .PHONY: genkey
 genkey:
