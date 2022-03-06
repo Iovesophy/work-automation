@@ -11,10 +11,12 @@ import (
 )
 
 const (
-	AUTH_CONFIG  = "../../config/config.yml"
-	PublicKeyPem = "../../config/automationPublicKey.pem"
+	AUTH_CONFIG  = "config/config.yml"
+	PublicKeyPem = "config/automationPublicKey.pem"
 	Mytmpl01     = "テスト"
 )
+
+var err error
 
 func main() {
 	c := auth.Controller{}
@@ -22,14 +24,11 @@ func main() {
 	if err := c.Driver.Start(); err != nil {
 		log.Fatal(err)
 	}
-
-	var err error
 	c.Page, err = c.Driver.NewPage()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// login
 	auth.Login("https://id.jobcan.jp/users/sign_in?app_key=atd&redirect_to=https://ssl.jobcan.jp/jbcoauth/callback", c, AUTH_CONFIG, PublicKeyPem)
 
 	c.Page.Navigate("https://ssl.jobcan.jp/employee/man-hour-manage")
