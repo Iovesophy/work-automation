@@ -9,7 +9,7 @@ build: clean
 
 .PHONY: clean
 clean:
-	rm -rf genkey attach detach manhours config/* ~/.ssh/work
+	rm -rf genkey attach detach manhours config ~/.ssh/work
 
 .PHONY: genkey
 genkey:
