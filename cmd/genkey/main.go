@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	PublicKeyPem  = "../../config/automationPublicKey.pem"
+	PublicKeyPem  = "config/automationPublicKey.pem"
 	PrivateKeyPem = "/.ssh/work/automationPrivateKey.pem"
 )
 

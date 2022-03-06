@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	AUTH_CONFIG  = "../../config/config.yml"
-	PublicKeyPem = "../../config/automationPublicKey.pem"
+	AUTH_CONFIG  = "config/config.yml"
+	PublicKeyPem = "config/automationPublicKey.pem"
 )
 
 func main() {

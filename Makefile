@@ -1,24 +1,32 @@
 .PHONY: setup
-setup:
+setup: build
 	./setup.sh
+
+.PHONY: build
+build: clean
+	./build.sh
+
+.PHONY: clean
+clean:
+	rm -f genkey do-login attach detach manhours
 
 .PHONY: genkey
 genkey:
-	cd cmd/genkey; go run main.go
+	./genkey
 
 .PHONY: login
 login:
-	cd cmd/do-login; go run main.go
+	./do-login
 
 .PHONY: attach
 attach:
 	if [ "$(shell cat config/touch.log)" = "1" ] ; then \
-		cd cmd/attach; go run main.go && cd -; echo 0 > config/touch.log; \
+		./attach && echo 0 > config/touch.log; \
 	fi
 
 .PHONY: detach
 detach:
 	if [ "$(shell cat config/touch.log)" = "0" ] ; then \
-		cd cmd/detach; go run main.go && cd -; echo 1 > config/touch.log; \
+		./detach && echo 1 > config/touch.log; \
 	fi
-	cd cmd/manhours; go run main.go
+	./manhours
