@@ -24,7 +24,6 @@ func Login(url string, c Controller, authconfig string, publickeypem string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	var user User
 	err = yaml.Unmarshal([]byte(buf), &user)
 	if err != nil {

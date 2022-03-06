@@ -1,7 +1,5 @@
 package main
 
-// hinagata
-
 import (
 	"log"
 
@@ -15,20 +13,17 @@ const (
 	PublicKeyPem = "config/automationPublicKey.pem"
 )
 
+var err error
+
 func main() {
-	//init
 	c := auth.Controller{}
 	c.Driver = agouti.ChromeDriver()
 	if err := c.Driver.Start(); err != nil {
 		log.Fatal(err)
 	}
-
-	var err error
 	c.Page, err = c.Driver.NewPage()
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	// login
 	auth.Login("https://id.jobcan.jp/users/sign_in?app_key=atd&redirect_to=https://ssl.jobcan.jp/jbcoauth/callback", c, AUTH_CONFIG, PublicKeyPem)
 }

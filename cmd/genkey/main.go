@@ -29,8 +29,8 @@ func CreateKey() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	pubEnc := gob.NewEncoder(file)
-	pubEnc.Encode(passWithPub)
+	publickey := gob.NewEncoder(file)
+	publickey.Encode(passWithPub)
 	file.Close()
 
 	var home string
@@ -42,8 +42,8 @@ func CreateKey() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	priEnc := gob.NewEncoder(file)
-	priEnc.Encode(pri)
+	privatekey := gob.NewEncoder(file)
+	privatekey.Encode(pri)
 	file.Close()
 
 	// Decode
