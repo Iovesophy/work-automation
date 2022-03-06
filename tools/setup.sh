@@ -17,6 +17,7 @@ rm -f chromedriver chromedriver_mac*.zip
 
 printf "Please input your email:"
 read -r JOBEMAIL
+mkdir -p ~/.ssh/work config
 printf "email: %s\n" "${JOBEMAIL}" > config/config.yml
 printf "1" > config/touch.log
 
