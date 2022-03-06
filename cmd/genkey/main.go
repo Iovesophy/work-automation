@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	PublicKeyPem  = "../../config/workAutomationPublicKey.pem"
-	PrivateKeyPem = "/.ssh/work/workAutomationPrivateKey.pem"
+	PublicKeyPem  = "../../config/automationPublicKey.pem"
+	PrivateKeyPem = "/.ssh/work/automationPrivateKey.pem"
 )
 
 func CreateKey() {
