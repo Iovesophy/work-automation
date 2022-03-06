@@ -8,15 +8,11 @@ build: clean
 
 .PHONY: clean
 clean:
-	rm -f genkey do-login attach detach manhours
+	rm -f genkey attach detach manhours
 
 .PHONY: genkey
 genkey:
 	./genkey
-
-.PHONY: login
-login:
-	./do-login
 
 .PHONY: attach
 attach:
